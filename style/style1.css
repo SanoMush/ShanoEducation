@@ -1,0 +1,258 @@
+:root {
+  --primary: rgba(233, 156, 13, 0.925);
+  --secondary: rgb(0, 0, 0);
+  --bg: rgb(255, 127, 0);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--bg);
+  color: #fff;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1%;
+  background-color: rgba(5, 3, 37, 0.8);
+  border-bottom: 1px solid var(--secondary);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  transition: z-index 0.3s ease-in-out; /* Animasi perubahan z-index */
+}
+
+/* CSS ketika menu "Education" diklik */
+.navbar.navbar-hidden {
+  z-index: -5; /* Atur z-index ke -1 untuk menyembunyikan .navbar */
+}
+
+.navbar .navbar-logo {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #fff;
+}
+
+.navbar .navbar-logo span {
+  color: teal;
+}
+
+.navbar .navbar-nav {
+  order: 1; /* Pindahkan navbar-nav ke akhir */
+}
+
+.navbar .navbar-nav a {
+  color: #fff;
+  display: inline-block;
+  font-size: 1.2rem;
+  margin: 0 1rem;
+}
+
+.navbar .navbar-nav a:hover {
+  color: teal;
+}
+
+.navbar .navbar-nav a::after {
+  content: "";
+  display: block;
+  padding: 0.3rem;
+  border-bottom: 0.1rem solid teal;
+  transform: scaleX(0);
+  transition: 0.2s linear;
+}
+
+.navbar .navbar-nav a:hover::after {
+  transform: scaleY(1);
+}
+
+/* Menyembunyikan .navbar-extra di layar desktop */
+@media (min-width: 768px) {
+  .navbar .navbar-extra {
+    display: none;
+  }
+}
+.navbar .navbar-extra a {
+  color: #fff;
+  margin: 0 1rem;
+}
+.navbar .navbar-extra a:hover {
+  color: teal;
+}
+
+#menu {
+  display: none;
+}
+/* education */
+
+/* Gradiasi latar belakang untuk "Section Education" */
+.education {
+  background: linear-gradient(
+    to bottom,
+    rgb(241, 215, 141),
+    rgb(231, 148, 22)
+  ); /* Sesuaikan warna gradiasi sesuai keinginan Anda */
+  position: relative;
+}
+
+.education h2 {
+  color: teal;
+  text-shadow: 1px 1px 3px rgba(5, 3, 37, 0.8);
+  font-size: 2.5rem;
+  margin-top: 4rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+/* Center h2 and h3 */
+
+.education .row .education-img h3 {
+  text-align: center;
+}
+
+/* Align h4 to the left */
+.education .row .education-img h4 {
+  text-align: left;
+  margin-left: 1rem;
+}
+
+/* Style paragraphs */
+.education .row .education-img p {
+  margin: 1rem 0;
+  text-align: justify;
+  color: black; /* Ubah warna teks menjadi hitam */
+  margin-right: 1.5rem;
+  margin-left: 1rem;
+}
+
+/* Center the entire content */
+.education .row .education-img {
+  /* Ubah latar belakang menjadi rgb(241, 215, 141) */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Center the image */
+.education .row .education-img img {
+  width: 75%;
+  margin: 1rem 0;
+}
+
+/* Style the unordered list */
+.education .row .education-img ul {
+  text-align: left;
+  list-style-type: disc;
+  padding-left: 2rem;
+  margin-right: 2rem;
+}
+
+/* Style h2, h3, and h4 */
+.education .row .education-img h2,
+.education .row .education-img h3,
+.education .row .education-img h4 {
+  color: teal; /* Ubah warna teks h2, h3, h4 menjadi teal */
+}
+/* Style ul and li */
+.education .row .education-img li {
+  color: black;
+  text-align: justify;
+  margin-right: 2rem;
+}
+
+/* footer section styling */
+footer {
+  background: rgb(226, 181, 59);
+  padding: 15px 23px;
+  color: #111;
+  text-align: center;
+}
+
+footer span a {
+  color: teal;
+  text-decoration: none;
+}
+
+footer span a:hover {
+  text-decoration: underline;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  html {
+    font-size: 62.5%;
+  }
+  #menu {
+    display: inline-block;
+  }
+
+  .navbar .navbar-nav {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background-color: #fff;
+    width: 30rem;
+    height: 100vh;
+    transition: 0.3s;
+  }
+  .navbar .navbar-nav.active {
+    right: 0;
+  }
+
+  .navbar .navbar-nav a {
+    color: var(--bg);
+    display: block;
+    margin: 1.5rem;
+    padding: 0.5rem;
+    font-size: 2rem;
+  }
+  .navbar .navbar-nav a::after {
+    transform-origin: 0 0;
+  }
+  .navbar .navbar-nav a:hover::after {
+    transform: scaleX(0.2);
+  }
+
+  .about .row {
+    flex-wrap: wrap;
+  }
+
+  .about .row .about-img img {
+    height: 24rem;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .about .row .content {
+    padding: 0;
+  }
+
+  .about .ro .content h3 {
+    margin-top: 1rem;
+    font-size: 2rem;
+  }
+  .about .row .content p {
+    font-size: 1.6rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 450px) {
+  html {
+    font-size: 62.5%;
+  }
+}
